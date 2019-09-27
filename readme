@@ -1,0 +1,145 @@
+Student Name: Alan Devine
+ID Number: 17412402
+SOC Username: devina24
+
+MyShell:
+
+Introduction:
+
+    This shell has been implemented in python3.7
+
+    This manual is split into:
+        * Shell Commands,
+        * Operating System Terminology,
+        * Output Redirection, and
+        * Running a background task.
+
+
+
+
+
+Shell Commands:
+
+Bellow are the supported shell commands:
+
+cd:
+
+    Description:
+
+    This Command either changes the current working directory to one stated
+    in a given argument, or in the absence of an argument, displays the
+    "current working directory". Arguments can be in the form of "relative and
+    absolute paths".
+
+dir:
+
+    This command will list the contents of a given directory. It takes one.
+    optional argument, path. When a path is not present, the current working
+    directory will be used.
+
+clr:
+
+    Clears the screen using the "ansi escape sequence" "\033c"
+
+environ:
+
+    Lists the "environment variables" of the host machine.
+
+echo:
+
+    Removes tabs, multiple spaces from a given string, and replaces them with
+    a single string.
+
+help:
+
+    Help shows this manual under the more filter (when you press space, 25 more
+    lines are produced)
+
+pause:
+
+    Prevents the user from using the shell until the enter key is pressed.
+
+quit:
+
+    Pretty self explanatory, this brings you back to the much better shell that
+    you were using beforehand :(
+
+[cmd] > [outputfile]:
+
+    Writes the output of the command to a given output file (see explanation
+    below under "Output Redirection")
+
+[cmd] >> [outputfile]:
+
+    Appends the output of the command to a given output file (see explanation
+    below under "Output Redirection")
+
+[cmd] &:
+
+    Following a command with "&" will run the command in the background (see
+    explanation below under running a "Running a background task")
+
+As well as the above, you can run any program (cli based or gui) located in the
+current working directory or /bin/.
+
+Operating System Terminology:
+
+
+    Environment Variables:
+
+    Environment variables are properties that the system, such as the system's
+    default text editor (usually nano), your username and the current working
+    directory to name a few.
+
+    Process:
+
+    A Process is typically defined as a program in execution.
+
+    Thread:
+
+    A subset of a process that is handled by the CPU scheduler.
+
+    Current Working Directory (cwd):
+
+    This is the directory that the user is located. Any commands that the user
+    inputs will take place in this directory. For example if we use the dir
+    command without specifying a directory, it will show the contents of the
+    current working directory.
+
+
+Output Redirection:
+
+
+    When either ">" or ">>" are found in a entered line, the output of the
+    left hand side is written to an output file on the right hand side and the
+    output of the command is suppressed.
+
+    Both ">" and ">>" will result in different outputs. ">" will create an new
+    file or over ride an existing one. ">>" will append the output an existing
+    file.
+
+    Here is an example of usage.
+
+    Lets say want to read the man page for man, we would do this by writing:
+
+    man man
+
+    Now lets say we want the man page for man in a file called "man", we would
+    write:
+
+    man man > man
+
+    Now in the current working directory there is a terribly name file, man,
+    which came from one of the weirdest commands I've ever seen.
+
+
+Running a background task:
+
+
+    Normally if we want to run a program, we would simply type in the program's
+    name into the shell and so long it exists in /bin/ or the current working
+    directory, it will open. However, this will lock the shell until the process
+    is terminated or the process is finished execution. By running the program
+    with "&" as the last argument. The process will run in the background,
+    this means that the user can still interact with the shell as the process
+    is running.
